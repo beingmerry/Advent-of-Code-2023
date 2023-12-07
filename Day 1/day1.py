@@ -1,14 +1,22 @@
-# import input .txt file
+"""
+Solution for day 1 of Advent of Code.
+"""
 
-with open('input.txt', encoding="ASCII") as f:
+with open("Day 1/input.txt", encoding="ASCII") as f:
     lines = f.read().splitlines()
 
-# read line 1 into list
-
-line1 = lines[0].split(',')
-line2 = lines[1].split(',')
-
 # print line1 and line2 on separate lines
+CALIBRATION_VALUE_SUM = 0
+for line in lines:
+    # print(line)
+    # extract first digit found on line
+    EXTRACTED_VALUE = ""
+    for character in line:
+        if character.isdigit():
+            EXTRACTED_VALUE += character
 
-print(line1)
-print(line2)
+    size = len(EXTRACTED_VALUE) - 1
+    calibrationValue = EXTRACTED_VALUE[0] + EXTRACTED_VALUE[size]
+    CALIBRATION_VALUE_SUM += int(calibrationValue)
+
+print(CALIBRATION_VALUE_SUM)
