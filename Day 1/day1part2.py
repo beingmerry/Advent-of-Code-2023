@@ -2,7 +2,7 @@
 Solution for day 1 of Advent of Code.
 """
 
-with open("Day 1/input.txt", encoding="ASCII") as f:
+with open("Day 1/testInputPart2.txt", encoding="ASCII") as f:
     lines = f.read().splitlines()
 # create dictionary of translating words to numbers for 1 to 9
 NUMBERS = {
@@ -16,11 +16,12 @@ NUMBERS = {
     "eight": 8,
     "nine": 9,
 }
-
+print(lines)
 
 CALIBRATION_VALUE_SUM = 0
 for line in lines:
     EXTRACTED_VALUE = ""
+
     for character in line:
         if character.isdigit():
             EXTRACTED_VALUE += character
